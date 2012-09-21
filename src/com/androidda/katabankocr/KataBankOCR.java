@@ -24,7 +24,7 @@ public class KataBankOCR {
 			
 		}
 	}
-	
+	// this is just an empty function to be valided with JUNIT
 	public int multiply (int x, int y) {
 		return x * y;
 	}
