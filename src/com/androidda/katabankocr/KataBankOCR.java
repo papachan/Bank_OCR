@@ -14,6 +14,10 @@ public class KataBankOCR {
 			
 			AccountReader reader = new AccountReader( file );
 			AccountParser parser = new AccountParser(reader.parseFile());
+//			Number linenum = Math.round(reader.quantity / 4) + 1;
+//			parser.getArraySequence();
+			System.out.println("end parsing here");
+			System.exit(0);
 
 			
 		} catch (FileNotFoundException fnfe) {

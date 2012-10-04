@@ -2,10 +2,18 @@ package com.androidda.katabankocr;
 
 public final class Account {
 	
-	private int accountNumber;
+	private String accountNumber;
 	
-	public Account(int account_number) {
+	public Account(String account_number) {
 		this.accountNumber = account_number;
+	}
+	
+	public Boolean isValidAccount() {
+		return true;
+	}
+	
+	public String getAccountNumber() {
+		return this.accountNumber;
 	}
 
 }

@@ -1,2 +1,5 @@
+.DS_Store
 bin/
 lib/junit-4.11-SNAPSHOT-20120805-1225.jar
+
+*.jar
