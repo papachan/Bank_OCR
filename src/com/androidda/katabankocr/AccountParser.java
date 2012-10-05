@@ -3,8 +3,6 @@ package com.androidda.katabankocr;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.commons.lang3.StringUtils;
-
 public class AccountParser {
 	
 	public static final int CANT_CHARS = 3; // 3 por linea para hacer un numero
@@ -12,7 +10,6 @@ public class AccountParser {
 	public static final int CANT_LINES = 3;// 3 lineas
 	public static final int ACCOUNTNUMBER_LENGTH = 9;// 3 numeros valid accounts
 	
-	private static int num = 0;
 	private static String[] numeros = new String[ACCOUNTNUMBER_LENGTH];
 	
 	private String[][][] lines;
@@ -28,7 +25,6 @@ public class AccountParser {
 		System.out.println( quantity + " numeros de cuenta");
 		
 		
-		String myaccount;
 		int index = 0;
 		for(index=0;index<l;index+=4){
 			this.lines = new String[CANT_LINES][ACCOUNTNUMBER_LENGTH][CANT_CHARS];
@@ -38,13 +34,12 @@ public class AccountParser {
 				c++;
 			}
 			for(int x=0; x<ACCOUNTNUMBER_LENGTH; ++x) {
-				numeros[x] =  (validador.isValidNumber(this.getNumberSequence(x))) ? 
+				numeros[x] =  (validador.isValidNumber(getNumberSequence(x))) ? 
 					Integer.toString( validador.getIndentified_number() )
 					: 
 					"?";
 			}
-			myaccount = StringUtils.join(numeros, "");
-			account = new Account(myaccount);
+			account = new Account(numeros);
 			getArraySequence();
 
 		}
@@ -76,17 +71,6 @@ public class AccountParser {
 		
 		
 	} 
-//	private void parseLine( StringBuilder el) {
-//		int x = 0;
-//		for(int j=0; j<LINE_WIDTH;j++){
-//			this.lines[this.num][x][j%3] = el.substring(j,j+1);
-//			if(j%3 == 2){
-//				x++;
-//			}
-//		}
-//		this.num++;
-//		
-//	}
 	
 
 }
