@@ -14,9 +14,6 @@ public class KataBankOCR {
 			
 			AccountReader reader = new AccountReader( file );
 			AccountParser parser = new AccountParser(reader.parseFile());
-//			Number linenum = Math.round(reader.quantity / 4) + 1;
-//			parser.getArraySequence();
-			System.out.println("end parsing here");
 			System.exit(0);
 
 			
@@ -27,10 +24,6 @@ public class KataBankOCR {
 			System.err.println("Error: " + e.getMessage());
 			
 		}
-	}
-	// this is just an empty function to be valided with JUNIT
-	public int multiply (int x, int y) {
-		return x * y;
 	}
 
 }
