@@ -13,7 +13,7 @@ public class KataBankOCR {
 			File file = new File(args[0]);
 			
 			AccountReader reader = new AccountReader( file );
-			AccountParser parser = new AccountParser(reader.parseFile());
+			new AccountParser(reader.parseFile());
 			System.exit(0);
 
 			
