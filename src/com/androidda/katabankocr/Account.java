@@ -6,6 +6,12 @@ public final class Account {
 	
 	private String accountNumber;
 	
+	public static final String ERROR_OK = "";
+	public static final String OPTION_AMB = " AMB";
+	public static final String ERR_ILL = " ILL";
+	public static final String ERR_ERR = " ERR";
+	
+	
 	public Account(String account_number) {
 		this.accountNumber = account_number;
 	}
@@ -13,8 +19,12 @@ public final class Account {
 		accountNumber = StringUtils.join(value, "");
 	}
 	
-	public Boolean isValidAccount() {
-		return (accountNumber.indexOf('?') != -1);
+	public boolean isValidAccount() {
+		return !(accountNumber.indexOf('?') != -1);
+	}
+	
+	public void add(String end){
+		accountNumber += end;
 	}
 	
 	public String getAccountNumber() {

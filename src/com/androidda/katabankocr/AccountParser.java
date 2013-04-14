@@ -35,18 +35,31 @@ public class AccountParser {
 			}
 			for(int x=0; x<ACCOUNTNUMBER_LENGTH; ++x) {
 				numeros[x] =  (validador.isValidNumber(getNumberSequence(x))) ? 
-					Integer.toString( validador.getIndentified_number() )
+					Integer.toString( validador.getIndentifiedNumber() )
 					: 
 					"?";
 			}
 			account = new Account(numeros);
-			getArraySequence();
+			
+			if(account.isValidAccount()) {
+				if(AccountCheck.checksum(account.getAccountNumber())) {
+					System.out.println("CheckSum valid");
+					
+				}else{
+					account.add(Account.ERR_ERR);
+				}
+			}else{
+				account.add(Account.ERR_ILL);
+			}
+			
+			output(account.getAccountNumber());
 
 		}
 		
 	}
+
 	
-	public void getArraySequence (){
+	public void printArraySequence (){
 		System.out.println(Arrays.toString(numeros));
 	}
 	
@@ -60,6 +73,7 @@ public class AccountParser {
 		}
 		return str;
 	}
+
 	private void parseLine( StringBuilder el, int n) {
 		int x = 0;
 		for(int j=0; j<LINE_WIDTH;j++){
@@ -68,9 +82,15 @@ public class AccountParser {
 				x++;
 			}
 		}
-		
-		
 	} 
 	
-
+	
+	private void output(String out) {
+		
+		
+		System.out.println(out);
+		
+		
+		
+	}
 }
