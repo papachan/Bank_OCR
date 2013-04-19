@@ -7,7 +7,7 @@ public final class Account {
 	private String accountNumber;
 	
 	public static final String ERROR_OK = "";
-	public static final String OPTION_AMB = " AMB";
+	public static final String OPTIONS_AMB = " AMB";
 	public static final String ERR_ILL = " ILL";
 	public static final String ERR_ERR = " ERR";
 	

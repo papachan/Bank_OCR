@@ -5,9 +5,11 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
+
 @SuiteClasses({
-	AccountParserTests.class
+	AccountParserTests.class,
+	AccountFileTest.class
+
 })
 public class AllTests {
-
 }
