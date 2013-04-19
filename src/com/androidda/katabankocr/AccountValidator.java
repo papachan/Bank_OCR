@@ -2,8 +2,6 @@ package com.androidda.katabankocr;
 
 public class AccountValidator {
 	
-	private int result = 0;
-	
 	private static final String CERO = " _ " + "| |" + "|_|";
 	private static final String UNO = "   " + "  |" + "  |";
 	private static final String DOS = " _ " + " _|" + "|_ ";
@@ -15,39 +13,46 @@ public class AccountValidator {
 	private static final String OCHO = " _ " + "|_|" + "|_|";
 	private static final String NUEVE = " _ " + "|_|" + " _|";
 	
-	public boolean isValidNumber (String in){
-		result = 0;
-		if(in.equals(CERO)){
-			setIndentified_number(0);
-		}else if(in.equals(UNO)) {
-			setIndentified_number(1);
-		}else if(in.equals(DOS)) {
-			setIndentified_number(2);
-		}else if(in.equals(TRES)) {
-			setIndentified_number(3);
-		}else if(in.equals(CUATRO)) {
-			setIndentified_number(4);
-		}else if(in.equals(CINCO)) {
-			setIndentified_number(5);
-		}else if(in.equals(SEIS)) {
-			setIndentified_number(6);
-		}else if(in.equals(SIETE)) {
-			setIndentified_number(7);
-		}else if(in.equals(OCHO)) {
-			setIndentified_number(8);
-		}else if(in.equals(NUEVE)) {
-			setIndentified_number(9);
-		}
-		if(result != 0){
+	public boolean isValidNumber (String in) {
+		if(in.equals(CERO) 
+			|| in.equals(UNO)
+			|| in.equals(DOS)
+			|| in.equals(TRES)
+			|| in.equals(CUATRO)
+			|| in.equals(CINCO)
+			|| in.equals(SEIS)
+			|| in.equals(SIETE)
+			|| in.equals(OCHO)
+			|| in.equals(NUEVE)
+			){
 			return true;
 		}
 		return false;
 	}
-	public int getIndentifiedNumber() {
-		return result;
+	public static String getIndentifiedNumber (String in) {
+		if(in.equals(CERO)){
+			return "0";
+		}else if(in.equals(UNO)) {
+			return "1";
+		}else if(in.equals(DOS)) {
+			return "2";
+		}else if(in.equals(TRES)) {
+			return "3";
+		}else if(in.equals(CUATRO)) {
+			return "4";
+		}else if(in.equals(CINCO)) {
+			return "5";
+		}else if(in.equals(SEIS)) {
+			return "6";
+		}else if(in.equals(SIETE)) {
+			return "7";
+		}else if(in.equals(OCHO)) {
+			return "8";
+		}else if(in.equals(NUEVE)) {
+			return "9";
+		}
+		return "?";
 	}
-	private void setIndentified_number(int number) {
-		result = number;
-	}
+
 
 }
